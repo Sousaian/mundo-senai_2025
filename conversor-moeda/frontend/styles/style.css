@@ -1,0 +1,287 @@
+:root {
+    --background: #121214;
+    --shape: #202024;
+    --shape-light: #29292E;
+    --green: #00B37E;
+    --red: #F75A68;
+    --gray: #8D8D99;
+    --text-title: #E1E1E6;
+    --text-body: #C4C4CC;
+    --white: #FFFFFF;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-body);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+header {
+    background-color: var(--shape);
+    padding: 2rem 0;
+}
+
+header .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--text-title);
+    font-size: 1.75rem;
+}
+
+.convert-button {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.convert-button:hover {
+    background-color: #00df98;
+}
+
+/* Summary Cards */
+.summary {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background-color: var(--shape);
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card span {
+    color: var(--text-body);
+    font-size: 1rem;
+}
+
+.card strong {
+    color: var(--text-title);
+    font-size: 1.5rem;
+}
+
+.card.total {
+    background-color: var(--green);
+}
+
+.card.total strong,
+.card.total span {
+    color: var(--white);
+}
+
+/* Transactions */
+.transactions {
+    background-color: var(--shape);
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background-color: var(--shape-light);
+    border: none;
+    border-radius: 6px;
+    color: var(--text-title);
+}
+
+.search-bar input::placeholder {
+    color: var(--gray);
+}
+
+.search-bar button {
+    background-color: transparent;
+    color: var(--green);
+    border: 1px solid var(--green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: var(--shape-light);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    color: var(--gray);
+    font-weight: 500;
+}
+
+td {
+    border-top: 1px solid #29292E;
+}
+
+td.positivo {
+    color: var(--green);
+}
+
+td.negativo {
+    color: var(--red);
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.pagination button {
+    background-color: var(--shape-light);
+    color: var(--text-body);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button.active,
+.pagination button:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 20, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal {
+    background-color: var(--shape);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.modal h2 {
+    color: var(--text-title);
+    margin-bottom: 1.5rem;
+}
+
+.modal-inputs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.input-group label {
+    color: var(--text-body);
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.input-group select,
+.input-group input {
+    background-color: var(--shape-light);
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem;
+    color: var(--text-title);
+}
+
+.input-group input::placeholder {
+    color: var(--gray);
+}
+
+.swap-icon {
+    color: var(--gray);
+    font-size: 1.5rem;
+}
+
+.input-group.full {
+    width: 100%;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.convert-confirm {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.convert-confirm:hover {
+    background-color: #00df98;
+}
+
+.close-modal {
+    background-color: transparent;
+    border: 1px solid var(--gray);
+    color: var(--gray);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: var(--shape-light);
+}

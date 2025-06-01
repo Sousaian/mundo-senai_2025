@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT Money | Dashboard</title>
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Empresarios</h1>
+            <button class="convert-button" id="openModal">Converter</button>
+        </div>
+    </header>
+
+    <main class="dashboard container">
+        <section class="summary">
+            <div class="card entradas">
+                <span>Entradas</span>
+                <strong>R$ 17.400,00</strong>
+            </div>
+            <div class="card saidas">
+                <span>Saídas</span>
+                <strong>R$ 1.259,00</strong>
+            </div>
+            <div class="card total">
+                <span>Total</span>
+                <strong>R$ 16.141,00</strong>
+            </div>
+        </section>
+
+        <section class="transactions">
+            <div class="search-bar">
+                <input type="text" placeholder="Busque uma transação">
+                <button>Buscar</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Moeda</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>USD/BRL</td>
+                        <td class="positivo">R$ 5,67</td>
+                        <td>Venda</td>
+                        <td>06/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>EUR/BRL</td>
+                        <td class="negativo">R$ 6,42</td>
+                        <td>Venda</td>
+                        <td>06/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>ARS/BRL</td>
+                        <td class="negativo">R$ 0,0048</td>
+                        <td>Venda</td>
+                        <td>06/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>CAD/BRL</td>
+                        <td class="positivo">R$ 4,15</td>
+                        <td>Venda</td>
+                        <td>06/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>CNY/BRL</td>
+                        <td class="positivo">R$ 0,75</td>
+                        <td>Venda</td>
+                        <td>06/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>BTC/USD</td>
+                        <td class="negativo">R$ 599.136</td>
+                        <td>Venda</td>
+                        <td>06/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>ETC/USD</td>
+                        <td class="negativo">R$ 14.756</td>
+                        <td>Venda</td>
+                        <td>06/05/2025</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <h2>Converter</h2>
+
+            <div class="modal-inputs">
+                <div class="input-group">
+                    <label for="fromCurrency">De:</label>
+                    <select id="fromCurrency">
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>BRL</option>
+                        <option>BTC</option>
+                    </select>
+                </div>
+
+                <div class="swap-icon">⇄</div>
+
+                <div class="input-group">
+                    <label for="toCurrency">Para:</label>
+                    <select id="toCurrency">
+                        <option>BRL</option>
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>BTC</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group full">
+                <label for="amount">Quantidade:</label>
+                <input type="number" id="amount" value="1" min="0">
+            </div>
+
+            <div class="modal-actions">
+                <button class="convert-confirm">Converter</button>
+                <button class="close-modal" id="closeModal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./scripts/main.js"></script>
+
+</html>
