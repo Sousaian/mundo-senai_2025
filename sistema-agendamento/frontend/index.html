@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+  <h1>Agendamento de Eventos</h1>
+
+  <form id="event-form">
+    <input type="text" id="name" placeholder="Nome do evento" required>
+    <input type="text" id="description" placeholder="Descrição">
+    <input type="text" id="responsible" placeholder="Responsável" required>
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+
+    <fieldset>
+      <legend>Salas</legend>
+      <label><input type="checkbox" name="rooms" value="1"> Sala 1</label>
+      <label><input type="checkbox" name="rooms" value="2"> Sala 2</label>
+      <!-- Adapte conforme o banco -->
+    </fieldset>
+
+    <button type="submit">Criar Evento</button>
+  </form>
+
+  <h2>Eventos Agendados</h2>
+  <ul id="events-list"></ul>
+
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>
