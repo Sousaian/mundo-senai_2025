@@ -9,17 +9,17 @@ const API_URL = 'http://localhost:3306/historico'; // Change if needed
 function getBotResponse(userMsg) {
     const msg = userMsg.toLowerCase();
 
-    if (msg.includes("hello")) return "Hello there!";
-    if (msg.includes("how are you")) return "I'm just code, but I'm doing fine!";
-    if (msg.includes("name")) return "I'm a simple chatbot.";
-    if (msg.includes("bye")) return "Goodbye!";
-    if (msg.includes("help")) return "Try saying hello or ask about me.";
+    if (msg.includes("oi")) return "Olá, como você está?";
+    if (msg.includes("como você está")) return "Sou apenas um código, mas estou bem!";
+    if (msg.includes("nome")) return "Eu sou um chatbot simples.";
+    if (msg.includes("tchau")) return "Até logo!";
+    if (msg.includes("ajuda")) return "Tente dizer olá ou pergunte sobre mim.";
 
     const randomReplies = [
-        "Interesting...",
-        "Can you explain that?",
-        "I don't understand that yet.",
-        "Hmm... I'm learning."
+        "Interessante...",
+        "Você pode explicar isso?",
+        "Ainda não entendi isso.",
+        "Hmm... Estou aprendendo."
     ];
     return randomReplies[Math.floor(Math.random() * randomReplies.length)];
 }
