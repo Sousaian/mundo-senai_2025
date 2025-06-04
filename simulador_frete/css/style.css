@@ -9,14 +9,52 @@
 
 .ship{
     color: rgb(2, 2, 168);
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .main{
     margin-top: 3rem;
-    padding: .5rem;
+    padding: .7rem;
     width: 95%;
     min-height: 300px;
     box-shadow: 0px 9px 19px 0px rgba(131,122,122,0.75);
     background-color: #ffffff;
     border-radius: 10px;
+}
+
+
+.forms_cep{
+    display: flex;
+    gap: 3rem;
+}
+
+.cep-inicial{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: .8rem;
+    margin-left: .7rem;
+    
+    & label{
+        margin-bottom: .5rem;
+    }
+}
+
+.cep-final{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: .8rem;
+    margin-left: .7rem;
+    
+    & label{
+        margin-bottom: .5rem;
+    }
+}
+
+.submit_cep{
+    background-color: #0000ff;
+    color: #ffffff;
+    
 }
