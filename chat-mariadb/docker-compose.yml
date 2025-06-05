@@ -12,6 +12,7 @@ services:
       - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d
     networks:
       - chat-network
 
@@ -26,6 +27,8 @@ volumes:
 
 #docker-compose up -d
 #ip addr show
+	#ip: 192.168.100.9
+	#port: 3307
 #sudo pacman -S mariadb-clients
 #mysql -h 127.0.0.1 -P 3307 -u root -p
 
