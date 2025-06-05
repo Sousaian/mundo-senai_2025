@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  chat-mariadb:
+    image: mariadb:latest
+    container_name: chat-mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: conversas_boot
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - chat-network
+
+networks:
+  chat-network:
+    driver: bridge
+
+volumes:
+  db_data:
+
+#tem que fazer:
+
+#docker-compose up -d
+#ip addr show
+#sudo pacman -S mariadb-clients
+#mysql -h 127.0.0.1 -P 3307 -u root -p
+
+#se der errado exec:
+
+#docker exec -it chat-mariadb bash
+#mysql -u root -p
+#listar usuarios: SELECT User, Host FROM mysql.user;
+#criando user: 
+#CREATE USER 'root'@'%' IDENTIFIED BY '12345678';
+#GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+#FLUSH PRIVILEGES;
+#docker-compose down
+#docker volume rm chat-mariadb_db_data
+#docker-compose up -d
+

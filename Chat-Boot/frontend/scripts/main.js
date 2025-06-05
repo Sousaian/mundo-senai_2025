@@ -14,6 +14,7 @@ function getBotResponse(userMsg) {
     if (msg.includes("nome")) return "Eu sou um chatbot simples.";
     if (msg.includes("tchau")) return "Até logo!";
     if (msg.includes("ajuda")) return "Tente dizer olá ou pergunte sobre mim.";
+    if (msg.includes("gay") || msg.includes("baitola")) return "Viado é você doido";
 
     const randomReplies = [
         "Interessante...",

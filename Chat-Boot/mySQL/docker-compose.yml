@@ -1,22 +1,15 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  mysql:
-    image: mysql:latest
-    container_name: chat-mysql
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: 12345678
-      MYSQL_DATABASE: conversas_boot
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 12345678
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
     ports:
       - "3307:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: senha123
+      MARIADB_DATABASE: conversas_boot
     volumes:
-      - db_data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d
+      - ./dbdata:/var/lib/mysql
 
-volumes:
-  db_data:
-
-# colocar no  terminal:
-# docker-compose up -d
