@@ -7,7 +7,9 @@ import knex from './database/connection'; // Ajuste o caminho conforme sua estru
 const app = express();
 const PORT = 3333;
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // ou o IP da máquina cliente
+}));
 app.use(express.json());
 app.use(routes);
 app.use(errors());
@@ -17,6 +19,6 @@ knex.raw('SELECT 1+1 AS result')
   .then(() => console.log('✅ Banco conectado com sucesso!'))
   .catch(err => console.error('❌ Falha na conexão:', err.message));
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening at http://localhost:${PORT}`);
 });

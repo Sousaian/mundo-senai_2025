@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./back
+    container_name: backend-chatBot
+    ports:
+      - "3308:3308"
+    volumes:
+      - ./back:/usr/src/app
+    restart: always
+

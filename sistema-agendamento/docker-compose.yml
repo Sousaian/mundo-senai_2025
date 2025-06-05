@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend-app
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./backend:/usr/src/app
+    restart: always
+

@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3333';
+const API_URL = 'http://192.168.137.70:3333';
 
 const eventsList = document.getElementById('events-list');
 const form = document.getElementById('event-form');
@@ -11,8 +11,15 @@ form.addEventListener('submit', async (e) => {
   const date = document.getElementById('date').value;
   const time = document.getElementById('time').value;
   const responsible = document.getElementById('responsible').value;
-  
+
   const datetime = `${date}T${time}:00`;
+  const selectedDate = new Date(datetime);
+  const now = new Date();
+
+  if (selectedDate < now) {
+    alert("Insira uma data e hora futura.");
+    return;
+  }
 
   try {
     await fetch(`${API_URL}/events`, {
@@ -23,7 +30,7 @@ form.addEventListener('submit', async (e) => {
         description,
         date_time: datetime,
         responsible,
-        rooms: [1] 
+        rooms: [1]
       })
     });
 
