@@ -1,60 +1,98 @@
-.navBar{
-    background-color: #ffffff;
-    padding: 1rem;
-    width: 100%;
-    border-bottom: 1px solid #dddcdc;
-    border-radius: 5px;
-    box-shadow: 0px 7px 13px 0px rgba(131,122,122,0.75);
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.ship{
-    color: rgb(2, 2, 168);
-    font-size: xx-large;
-    font-weight: bold;
+/* Body e fonte base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.main{
-    margin-top: 3rem;
-    padding: .7rem;
-    width: 95%;
-    min-height: 300px;
-    box-shadow: 0px 9px 19px 0px rgba(131,122,122,0.75);
-    background-color: #ffffff;
-    border-radius: 10px;
+/* Navbar */
+.navBar {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
-
-.forms_cep{
-    display: flex;
-    gap: 3rem;
+.navBar .ship {
+  font-size: 1.8rem;
 }
 
-.cep-inicial{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin-top: .8rem;
-    margin-left: .7rem;
-    
-    & label{
-        margin-bottom: .5rem;
-    }
+/* Container principal */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
 }
 
-.cep-final{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin-top: .8rem;
-    margin-left: .7rem;
-    
-    & label{
-        margin-bottom: .5rem;
-    }
+/* Formulário de CEP */
+.cep {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 400px;
 }
 
-.submit_cep{
-    background-color: #0000ff;
-    color: #ffffff;
-    
+.cep h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #007bff;
+}
+
+/* Campos do formulário */
+.forms_cep label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.forms_cep input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Botão */
+.submit_cep {
+  background-color: #007bff;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submit_cep:hover {
+  background-color: #0056b3;
+}
+
+/* Resultado do frete */
+.resultado {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #e6f4ff;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
 }
