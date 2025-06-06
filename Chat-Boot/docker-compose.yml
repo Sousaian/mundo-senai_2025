@@ -2,11 +2,17 @@ version: '3.9'
 
 services:
   backend:
-    build: ./back
-    container_name: backend-chatBot
+    build: ./Back
+    container_name: backend-java
     ports:
       - "3308:3308"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=3306
+      - DB_NAME=conversas_boot
+      - DB_USER=root
+      - DB_PASSWORD=12345678
     volumes:
-      - ./back:/usr/src/app
+      - ./Back:/app
     restart: always
 

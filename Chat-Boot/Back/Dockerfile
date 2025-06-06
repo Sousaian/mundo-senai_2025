@@ -1,19 +1,19 @@
-FROM node:18
+# Etapa de build (se você quiser construir o jar dentro do container — opcional)
+# FROM maven:3.9-eclipse-temurin-17 AS build
+# WORKDIR /app
+# COPY . .
+# RUN mvn clean package -DskipTests
 
-# Cria uma pasta no container
-WORKDIR /usr/src/app
+# Etapa de execução
+FROM eclipse-temurin:17-jre
+WORKDIR /app
 
-# Copia os arquivos de dependências
-COPY package*.json ./
+# Copia o arquivo .jar para o container
+COPY chat/target/chat-0.0.1-SNAPSHOT.jar app.jar
 
-# Instala as dependências
-RUN npm install
+# Expõe a porta que sua aplicação usa
+EXPOSE 3308
 
-# Copia todo o restante do projeto
-COPY . .
+# Comando para rodar a aplicação
+CMD ["java", "-jar", "app.jar"]
 
-# Expõe a porta 3333 (onde seu backend vai rodar)
-EXPOSE 3333
-
-# Comando para iniciar a aplicação
-CMD ["npm", "run", "dev"]
