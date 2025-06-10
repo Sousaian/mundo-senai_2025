@@ -8,7 +8,9 @@ const app = express();
 const PORT = 3333;
 
 app.use(cors({
-  origin: '*', // ou o IP da máquina cliente
+  origin: '*', 
+
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
 app.use(express.json());
 app.use(routes);

@@ -8,7 +8,7 @@ dotenv.config();
 
 // Start Server
 const app = express();
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 5050; 
 const stripe = stripeLib(process.env.STRIPE_API_KEY);
 const DOMAIN = process.env.DOMAIN || `http://localhost:${port}`; 
 

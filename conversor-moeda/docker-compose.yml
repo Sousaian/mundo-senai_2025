@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend-Conversor
+    ports:
+      - "3334:3334"
+    volumes:
+      - ./backend:/usr/src/app
+    restart: always
+

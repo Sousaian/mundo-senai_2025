@@ -1,4 +1,4 @@
-const API_URL = 'http://192.168.137.70:3333';
+const API_URL = 'http://10.140.29.71:3333';
 
 const eventsList = document.getElementById('events-list');
 const form = document.getElementById('event-form');

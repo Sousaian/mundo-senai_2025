@@ -35,7 +35,7 @@ converterBtn.addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/api/converter?from=${from}&to=${to}&amount=${amount}`);
+        const response = await fetch(`http://10.140.29.71:3010/api/converter?from=${from}&to=${to}&amount=${amount}`);
 
         if (!response.ok) {
             let msg = 'Erro na requisição';

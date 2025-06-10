@@ -5,7 +5,7 @@ import cors from 'cors';
 
 
 const app: Application = express();
-const PORT = 3000;
+const PORT = 3010;
 
 // Habilita o JSON no corpo das requisições (se for necessário no futuro)
 app.use(express.json());
@@ -27,6 +27,6 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   res.status(500).json({ error: 'Erro interno do servidor.' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
